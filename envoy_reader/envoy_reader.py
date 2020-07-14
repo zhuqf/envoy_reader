@@ -80,6 +80,9 @@ class EnvoyReader():
     def update_interval(self, interval):
         self._sensors_update_interval = timedelta(seconds=interval)
 
+    def set_required_sensors(self, sensors):
+        self.required_sensors = sensors
+
     def hasProductionAndConsumption(self, json):
         """Check if json has keys for both production and consumption"""
         return "production" in json and "consumption" in json
